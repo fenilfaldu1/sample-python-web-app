@@ -2,4 +2,4 @@
 
 chown nginx:nginx -R /var/www/SampleApp/
 cd /var/www/SampleApp
-pipenv install
+pipenv --python /usr/bin/python3.7
