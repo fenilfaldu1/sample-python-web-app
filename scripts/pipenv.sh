@@ -13,7 +13,7 @@ cd /var/www/SampleApp
 pyenv install 3.11.0
 
 # Specify Python 3.11 for the Pipenv environment
-pyenv global 3.11.0
+pipenv --python $(pyenv root)/versions/3.11.0/bin/python3.11
 
 # Install project dependencies using Pipenv
 pipenv install
