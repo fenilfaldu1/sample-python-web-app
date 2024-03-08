@@ -1,13 +1,20 @@
 #!/bin/bash -xe
 
+# Remove existing pyenv directory
+rm -rf /root/.pyenv
+
+# Change ownership of directory to nginx user
 chown nginx:nginx -R /var/www/SampleApp/
+
+# Change into the project directory
 cd /var/www/SampleApp
-# Install pyenv (assuming it's not already installed)
-curl https://pyenv.run | bash
 
-# Add pyenv to the PATH
-export PATH="$HOME/.pyenv/bin:$PATH"
-
-# Initialize pyenv
-eval "$(pyenv init --path)"
+# Install Python 3.11 using pyenv
 pyenv install 3.11.0
+
+# Specify Python 3.11 for the Pipenv environment
+pyenv global 3.11.0
+
+# Install project dependencies using Pipenv
+pipenv install
+
