@@ -8,7 +8,6 @@ phases:
       - echo Entered the install phase...
       - pip install pipenv
       - pipenv install
-      - pipenv venv
       - source venv/bin/activate  
       - pip install flask
     finally:
